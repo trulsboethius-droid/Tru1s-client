@@ -11,11 +11,11 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
       - name: Grant execute permission for gradlew
-        run: chmod +x Tru1sClient_Fabric_1.21.1/gradlew
+        run: chmod +x gradlew
       - name: Build with Gradle
-        run: cd Tru1sClient_Fabric_1.21.1 && ./gradlew build
+        run: ./gradlew build
       - name: Upload Jar File
         uses: actions/upload-artifact@v4
         with:
           name: tru1sclient-mod
-          path: Tru1sClient_Fabric_1.21.1/build/libs/*.jar
+          path: build/libs/*.jar
