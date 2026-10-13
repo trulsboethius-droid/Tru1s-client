@@ -10,19 +10,17 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-      - name: Find and build project
+      - name: Setup Gradle Wrapper
         run: |
-          GRADLEW_PATH=$(find . -name "gradlew" -type f | head -n 1)
-          if [ -z "$GRADLEW_PATH" ]; then
-            echo "Kunde inte hitta gradlew!"
-            exit 1
-          fi
-          PROJECT_DIR=$(dirname "$GRADLEW_PATH")
-          cd "$PROJECT_DIR"
+          cd Tru1sClient_Fabric_1.21.1_Source
+          gradle wrapper
           chmod +x gradlew
+      - name: Build with Gradle
+        run: |
+          cd Tru1sClient_Fabric_1.21.1_Source
           ./gradlew build
       - name: Upload Jar File
         uses: actions/upload-artifact@v4
         with:
           name: tru1sclient-mod
-          path: "**/build/libs/*.jar"
+          path: Tru1sClient_Fabric_1.21.1_Source/build/libs/*.jar
