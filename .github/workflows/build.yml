@@ -10,12 +10,19 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-      - name: Build with Gradle
-        run: ./gradlew build
+      - name: Find and build project
+        run: |
+          GRADLEW_PATH=$(find . -name "gradlew" -type f | head -n 1)
+          if [ -z "$GRADLEW_PATH" ]; then
+            echo "Kunde inte hitta gradlew!"
+            exit 1
+          fi
+          PROJECT_DIR=$(dirname "$GRADLEW_PATH")
+          cd "$PROJECT_DIR"
+          chmod +x gradlew
+          ./gradlew build
       - name: Upload Jar File
         uses: actions/upload-artifact@v4
         with:
           name: tru1sclient-mod
-          path: build/libs/*.jar
+          path: "**/build/libs/*.jar"
