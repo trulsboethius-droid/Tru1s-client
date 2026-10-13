@@ -10,10 +10,10 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-      - name: Setup Gradle Wrapper
+      - name: Setup Gradle 8.10
         run: |
           cd Tru1sClient_Fabric_1.21.1_Source
-          gradle wrapper
+          gradle wrapper --gradle-version 8.10
           chmod +x gradlew
       - name: Build with Gradle
         run: |
