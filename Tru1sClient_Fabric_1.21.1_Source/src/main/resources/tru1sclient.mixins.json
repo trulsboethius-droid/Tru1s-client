@@ -3,10 +3,11 @@
   "package": "com.tru1s.client.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "PlayerEntityMixin",
     "ClientPlayerInteractionManagerMixin",
     "LightmapTextureManagerMixin",
-    "SpecialLoadingScreenMixin"
+    "PlayerEntityMixin"
   ],
-  "client": []
+  "injectors": {
+    "defaultRequire": 1
+  }
 }
