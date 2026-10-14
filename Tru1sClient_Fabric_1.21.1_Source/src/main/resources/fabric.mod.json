@@ -1,26 +1,9 @@
-{
-  "schema_version": 1,
-  "id": "tru1sclient",
-  "version": "1.0.0",
-  "name": "Tru1s Client",
-  "description": "A galaxy-themed utility mod with custom GUI, ESP, Waypoints, Fake FPS, and movement features.",
-  "authors": [
-    "Tru1s"
-  ],
-  "contact": {},
-  "license": "MIT",
-  "environment": "client",
-  "entrypoints": {
-    "client": [
-      "com.tru1s.client.Tru1sClient"
-    ]
-  },
-  "mixins": [
-    "tru1sclient.mixins.json"
-  ],
-  "depends": {
-    "fabricloader": ">=0.15.0",
-    "minecraft": "~1.21",
-    "java": ">=21"
-  }
+package com.tru1s.client.mixin;
+
+import net.minecraft.entity.player.PlayerEntity;
+import org.spongepowered.asm.mixin.Mixin;
+
+@Mixin(PlayerEntity.class)
+public abstract class PlayerEntityMixin {
+    // Rensa ut oanvända shadow-metoder som ändrats i Minecraft 1.21.1
 }
