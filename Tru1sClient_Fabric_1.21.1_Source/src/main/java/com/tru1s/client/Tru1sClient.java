@@ -1,6 +1,10 @@
+package com.tru1s.client;
+
+import net.fabricmc.api.ClientModInitializer;
+
 public class Tru1sClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        // Här kommer din klientkod att startas!
+        
     }
 }
