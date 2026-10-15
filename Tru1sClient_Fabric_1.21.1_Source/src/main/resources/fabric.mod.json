@@ -1,5 +1,25 @@
-"entrypoints": {
-  "client": [
-    "com.tru1s.client.Tru1sClient"
-  ]
+{
+  "schemaVersion": 1,
+  "id": "tru1sclient",
+  "version": "1.0.0",
+  "name": "Tru1s Client",
+  "description": "Custom galaxy-themed Minecraft client",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.tru1s.client.Tru1sClient"
+    ]
+  },
+  "mixins": [
+    "tru1sclient.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
 }
