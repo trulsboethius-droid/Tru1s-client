@@ -1,28 +1,5 @@
-{
-  "schemaVersion": 1,
-  "id": "tru1sclient",
-  "version": "${version}",
-  "name": "Tru1s Client",
-  "description": "Custom Galaxy-Themed Minecraft 1.21.1 Fabric Client",
-  "authors": [
-    "Tru1s"
-  ],
-  "contact": {},
-  "license": "MIT",
-  "icon": "assets/tru1sclient/icon.png",
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "com.tru1s.client.Tru1sClient"
-    ]
-  },
-  "mixins": [
-    "tru1sclient.mixins.json"
-  ],
-  "depends": {
-    "fabricloader": ">=0.16.0",
-    "minecraft": "1.21.1",
-    "java": ">=21",
-    "fabric-api": "*"
-  }
+"entrypoints": {
+  "client": [
+    "com.tru1s.client.Tru1sClient"
+  ]
 }
